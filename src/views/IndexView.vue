@@ -51,9 +51,10 @@ export default defineComponent({
     background-image: url("../assets/img/b.png");
     width: 200px;
     height: 200px;
-
+    left: 80vw;
+    top: 80vh;
 }
 .selected {
-    transform: scale(1.2);
+    transform: scale(1.5);
 }
 </style>
