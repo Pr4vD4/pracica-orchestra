@@ -44,6 +44,7 @@ export default defineComponent({
 }
 .h1 {
     font-size: 7rem;
+    font-weight: 600;
 }
 .toMenu {
 //font-family: CyrRound,serif;
@@ -57,5 +58,6 @@ export default defineComponent({
     border: .15vw solid #fff;
     width: 30%;
     text-decoration: none;
+    font-weight: 600;
 }
 </style>

@@ -1,6 +1,9 @@
 <template>
 
     <div class="wrapper" ref="game">
+        <div class="task text-center">
+            Выбери инструменты для шумового оркестра в детском саду
+        </div>
         <div class="play"></div>
         <div class="instrument xylophone" data-correct="1"></div>
         <div class="instrument b" data-correct="1"></div>
@@ -47,6 +50,22 @@ export default defineComponent({
     background-repeat: no-repeat;
     overflow: hidden;
 }
+
+.task {
+    padding: 10px;
+    font-weight: 700;
+    font-size: 3.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background: white;
+    width: 40vw;
+    height: 28vh;
+    top: 26vh;
+    left: 37vw;
+}
+
 .instrument {
     position: absolute;
     z-index: 10;
@@ -88,7 +107,7 @@ export default defineComponent({
     background-image: url("../assets/img/maracas.png");
     height: 120px;
     width: 120px;
-    left: 63vw;
+    left: 65vw;
     top: 52vh;
 }
 
@@ -113,7 +132,7 @@ export default defineComponent({
     height: 300px;
     width: 150px;
     left: 28vw;
-    top: 54vh;
+    top: 56vh;
 }
 .synth {
     background-image: url("../assets/img/synth.png");
@@ -128,7 +147,7 @@ export default defineComponent({
     height: 225px;
     width: 225px;
     left: 5vw;
-    top: 62vh;
+    top: 65vh;
 }
 
 .selected {
