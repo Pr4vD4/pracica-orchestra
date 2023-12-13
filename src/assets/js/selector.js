@@ -1,3 +1,5 @@
+import anime from "../../../public/assets/js/anime";
+
 export class Game {
     constructor(game) {
         this.selectedInstruments = new Set()
@@ -24,10 +26,12 @@ export function startSelector(game) {
 
     function toggleSelect(event) {
         event.target.classList.toggle('selected')
+
         if (Number(event.target.dataset.correct)) {
 
             if (game.selectedInstruments.has(event.target)) {
                 game.selectedInstruments.delete(event.target)
+
             } else {
                 game.selectedInstruments.add(event.target)
             }
@@ -43,6 +47,16 @@ export function startSelector(game) {
     }
 
     function check(event) {
+        anime({
+            targets: event.target,
+            // scale: 1.2,
+            keyframes: [
+                {scale: 1.2},
+                {scale: 1}
+            ],
+            easing: 'easeInBack',
+            duration: 200,
+        })
         console.log(game)
         if (game.selectedInstruments.size === game.instruments && game.incorrectInstruments.size === 0) {
             console.log(1)

@@ -5,6 +5,9 @@
         <div class="instrument xylophone" data-correct="1"></div>
         <div class="instrument b" data-correct="1"></div>
         <div class="instrument maracas " data-correct="1"></div>
+        <div class="instrument spoons" data-correct="1"></div>
+        <div class="instrument triangle" data-correct="1"></div>
+        <div class="instrument synth" data-correct="0"></div>
         <div class="instrument violin " data-correct="0"></div>
 <!--        <div class="instrument"></div>-->
     </div>
@@ -41,6 +44,7 @@ export default defineComponent({
     background-size: cover;
     background-position-y: 50%;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 .instrument {
     position: absolute;
@@ -82,7 +86,23 @@ export default defineComponent({
     height: 150px;
     width: 150px;
     left: 60vw;
-    top: 53vh;
+    top: 49vh;
+}
+
+.spoons {
+    background-image: url("../assets/img/spoons.png");
+    height: 150px;
+    width: 150px;
+    left: 90vw;
+    top: 67vh;
+}
+
+.triangle {
+    background-image: url("../assets/img/triangle.png");
+    height: 150px;
+    width: 150px;
+    left: 15vw;
+    top: 2vh;
 }
 
 .violin {
@@ -91,6 +111,13 @@ export default defineComponent({
     width: 150px;
     left: 32vw;
     top: 52vh;
+}
+.synth {
+    background-image: url("../assets/img/synth.png");
+    height: 70px;
+    width: 225px;
+    left: 48vw;
+    top: 72vh;
 }
 .selected {
     transform: scale(1.5);
