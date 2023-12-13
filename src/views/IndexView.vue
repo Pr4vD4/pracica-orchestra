@@ -1,21 +1,32 @@
 <template>
 
-    <div class="wrapper">
-        <div class="instrument xylophone"></div>
-        <div class="instrument b"></div>
-        <div class="instrument"></div>
+    <div class="wrapper" ref="game">
+        <div class="play"></div>
+        <div class="instrument xylophone" data-correct="1"></div>
+        <div class="instrument b" data-correct="1"></div>
+        <div class="instrument maracas " data-correct="1"></div>
+        <div class="instrument violin " data-correct="0"></div>
+<!--        <div class="instrument"></div>-->
     </div>
-
+    <MessageSuccess v-if="game.success"/>
 </template>
 
 <script>
 import {defineComponent} from 'vue'
-import {startSelector} from "@/assets/js/selector";
+import {startSelector, Game} from "@/assets/js/selector";
+import MessageSuccess from "@/components/MessageSuccess.vue";
 
 export default defineComponent({
     name: "Index",
+    components: {MessageSuccess},
+    data() {
+        return {
+            game: {}
+        }
+    },
     mounted() {
-        startSelector()
+        this.game = new Game(this.$refs.game)
+        startSelector(this.game)
     }
 })
 </script>
@@ -38,6 +49,18 @@ export default defineComponent({
     background-repeat: no-repeat;
 }
 
+.play {
+    position: absolute;
+    z-index: 10;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../assets/img/play.png");
+    width: 8vw;
+    height: 8vw;
+    left: 47vw;
+    top: 36vh;
+}
+
 .xylophone {
     background-image: url("../assets/img/xylophone.png");
     width: 200px;
@@ -53,6 +76,21 @@ export default defineComponent({
     height: 200px;
     left: 80vw;
     top: 80vh;
+}
+.maracas {
+    background-image: url("../assets/img/maracas.png");
+    height: 150px;
+    width: 150px;
+    left: 60vw;
+    top: 53vh;
+}
+
+.violin {
+    background-image: url("../assets/img/violin.png");
+    height: 300px;
+    width: 150px;
+    left: 32vw;
+    top: 52vh;
 }
 .selected {
     transform: scale(1.5);
