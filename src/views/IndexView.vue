@@ -9,6 +9,7 @@
         <div class="instrument triangle" data-correct="1"></div>
         <div class="instrument synth" data-correct="0"></div>
         <div class="instrument violin " data-correct="0"></div>
+        <div class="instrument accordionIns" data-correct="0"></div>
 <!--        <div class="instrument"></div>-->
     </div>
     <MessageSuccess v-if="game.success"/>
@@ -59,10 +60,12 @@ export default defineComponent({
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url("../assets/img/play.png");
-    width: 8vw;
-    height: 8vw;
-    left: 47vw;
-    top: 36vh;
+    width: 10vw;
+    height: 10vw;
+    //left: 47vw;
+    //top: 36vh;
+    bottom: 0;
+    right: 20px;
 }
 
 .xylophone {
@@ -76,17 +79,17 @@ export default defineComponent({
 
 .b {
     background-image: url("../assets/img/b.png");
-    width: 200px;
-    height: 200px;
-    left: 80vw;
-    top: 80vh;
+    width: 220px;
+    height: 220px;
+    left: 78vw;
+    top: 78vh;
 }
 .maracas {
     background-image: url("../assets/img/maracas.png");
-    height: 150px;
-    width: 150px;
-    left: 60vw;
-    top: 49vh;
+    height: 120px;
+    width: 120px;
+    left: 63vw;
+    top: 52vh;
 }
 
 .spoons {
@@ -94,31 +97,40 @@ export default defineComponent({
     height: 150px;
     width: 150px;
     left: 90vw;
-    top: 67vh;
+    top: 65vh;
 }
 
 .triangle {
     background-image: url("../assets/img/triangle.png");
-    height: 150px;
-    width: 150px;
+    height: 125px;
+    width: 125px;
     left: 15vw;
-    top: 2vh;
+    top: 8vh;
 }
 
 .violin {
     background-image: url("../assets/img/violin.png");
     height: 300px;
     width: 150px;
-    left: 32vw;
-    top: 52vh;
+    left: 28vw;
+    top: 54vh;
 }
 .synth {
     background-image: url("../assets/img/synth.png");
-    height: 70px;
-    width: 225px;
+    height: 100px;
+    width: 350px;
     left: 48vw;
     top: 72vh;
 }
+
+.accordionIns {
+    background-image: url("../assets/img/accordion.png");
+    height: 225px;
+    width: 225px;
+    left: 5vw;
+    top: 62vh;
+}
+
 .selected {
     transform: scale(1.5);
 }

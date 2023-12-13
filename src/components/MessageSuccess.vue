@@ -10,7 +10,7 @@ export default defineComponent({
     <div class="message">
         <div data-v-5074c3c4="" class="message-box d-flex flex-column justify-content-center align-items-center">
             <div data-v-5074c3c4="" class="h1">Вы успешно справились!</div>
-            <a data-v-5074c3c4="" href="/" class="toMenu mt-5">На главную</a>
+            <button data-v-5074c3c4="" onclick="window.location.reload()" class="toMenu mt-5">На главную</button>
         </div>
     </div>
 </template>
