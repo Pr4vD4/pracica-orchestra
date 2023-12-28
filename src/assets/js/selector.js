@@ -59,6 +59,9 @@ export function startSelector(game) {
         })
         console.log(game)
         if (game.selectedInstruments.size === game.instruments && game.incorrectInstruments.size === 0) {
+            let audio = new Audio('./assets/audio/orchestra.mp3')
+            audio.volume = 0.05
+            audio.play()
             console.log(1)
             game.success = true
         }
