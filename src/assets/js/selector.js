@@ -6,10 +6,81 @@ export class Game {
         this.success = false
         this.incorrectInstruments = new Set()
         this.countInstruments(game)
+        this.audio = new Audio('./assets/audio/orchestra.mp3')
+        this.instrumentsSounds()
     }
 
     countInstruments(game) {
         this.instruments = game.querySelectorAll('[data-correct="1"]').length
+    }
+
+
+    instrumentsSounds = () => {
+
+        function playAudio(audio) {
+            let playedPromise = audio.play();
+            if (playedPromise) {
+                playedPromise.catch((e) => {
+                    console.log(e)
+                    if (e.name === 'NotAllowedError' || e.name === 'NotSupportedError') {
+                        console.log(e.name);
+                    }
+                }).then(() => {
+                    console.log("playing sound !!!");
+                });
+            }
+        }
+
+
+        document.querySelector('.xylophone').addEventListener('touchstart', function () {
+
+            this.audio = new Audio('./assets/audio/xylophone.mp3')
+            this.audio.volume = 0.05
+            playAudio(this.audio)
+
+        })
+        document.querySelector('.b').addEventListener('touchstart', function () {
+            this.audio = new Audio('./assets/audio/b.mp3')
+            this.audio.volume = 0.05
+            playAudio(this.audio)
+
+        })
+        document.querySelector('.maracas').addEventListener('touchstart', function () {
+            this.audio = new Audio('./assets/audio/maracas.mp3')
+            this.audio.volume = 0.05
+            playAudio(this.audio)
+
+        })
+        document.querySelector('.spoons').addEventListener('touchstart', function () {
+            this.audio = new Audio('./assets/audio/spoons.mp3')
+            this.audio.volume = 0.05
+            playAudio(this.audio)
+
+        })
+        document.querySelector('.triangle').addEventListener('touchstart', function () {
+            this.audio = new Audio('./assets/audio/triangle.mp3')
+            this.audio.volume = 0.05
+            playAudio(this.audio)
+
+        })
+        document.querySelector('.synth').addEventListener('touchstart', function () {
+            this.audio = new Audio('./assets/audio/synth.mp3')
+            this.audio.volume = 0.05
+            playAudio(this.audio)
+
+        })
+        document.querySelector('.violin').addEventListener('touchstart', function () {
+            this.audio = new Audio('./assets/audio/violin.mp3')
+            this.audio.volume = 0.05
+            playAudio(this.audio)
+
+        })
+        document.querySelector('.accordionIns').addEventListener('touchstart', function () {
+            this.audio = new Audio('./assets/audio/accordion.mp3')
+            this.audio.volume = 0.05
+            playAudio(this.audio)
+
+        })
     }
 
 }
@@ -59,12 +130,11 @@ export function startSelector(game) {
         })
         console.log(game)
         if (game.selectedInstruments.size === game.instruments && game.incorrectInstruments.size === 0) {
-            let audio = new Audio('./assets/audio/orchestra.mp3')
-            audio.volume = 0.05
-            audio.play()
+
             console.log(1)
             game.success = true
         }
     }
+
 
 }
